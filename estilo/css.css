@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.contenedor {
+    background-color: aqua;
+    padding: 10px;
+    font-size: 25px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 2fr 1fr; /* Mejor ajuste de columnas */
+    grid-template-rows: auto 1fr auto; /* Definir filas: encabezado, contenido y pie */
+    grid-template-areas: 
+        "header header header"
+        "side1 contenido side2"
+        "footer footer footer";
+    text-align: center;
+}
+
+.contenedor>div {
+    background-color: chartreuse; /* Color por defecto para todos los divs */
+    padding: 10px;
+}
+
+/* Encabezado ocupa las tres columnas */
+.contenedor .header {
+    background-color: yellow;
+    grid-area: header;
+}
+
+/* Sidebars */
+.contenedor .side1 {
+    background-color: bisque;
+    grid-area: side1;
+}
+
+.contenedor .side2 {
+    background-color: bisque;
+    grid-area: side2;
+}
+
+/* Contenido central */
+.contenedor .contenido {
+    background-color: beige;
+    grid-area: contenido;
+}
+
+/* Footer ocupa las tres columnas */
+.contenedor .footer {
+    background-color: tomato;
+    grid-area: footer;
+}
+
+/* Flexbox para la clase emo */
+.contenedor .contenido .emo {
+    display: flex;
+    justify-content: space-around; /* Espacio alrededor de los elementos */
+    align-items: center;
+    height: 100%; /* Asegurar que ocupe el espacio completo */
+}
+
+.contenedor .contenido .emo div {
+    width: 100px;
+    height: 100px;
+    background-color: lavender;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid purple;
+}
